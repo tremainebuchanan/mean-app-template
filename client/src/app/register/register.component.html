@@ -1,0 +1,38 @@
+<section class="pane pane-left pane--state-dark pane--state-flex">
+  <div class="service-intro">
+      <h1>Starter App</h1>
+      <div class="login--image login--image-light"></div>
+
+      <h2>Application Tag Line</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eaque quis culpa dignissimos voluptatum totam repellat tempore maiores architecto enim facere quidem consequatur, similique laboriosam accusantium tempora sapiente pariatur asperiores.</p>
+  </div>
+
+</section>
+<section class="pane pane--state-flex">
+  <div class="register">
+      <h1>Create Account</h1>
+      <!-- <div class="message">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore facere corrupti magni, repudiandae quae distinctio quisquam necessitatibus.</p>
+      </div> -->
+
+      <form>
+          <div class="form-element">
+              <label>Email</label>
+              <input type="text" class="input" name="email" [(ngModel)]="email">
+          </div>
+          <div class="form-element">
+              <label for="">Password - <span style="font-weight: normal;">8 characters or more</span></label>
+              <input type="password" class="input" name="password" [(ngModel)]="password">
+          </div>
+
+          <div class="form-element">
+              <label for="">Confirm Password</label>
+              <input type="password" class="input" name="confirmPassword" [(ngModel)]="confirmPassword">
+          </div>
+
+          <p>By registering, you are in agreement with our <a href>Terms and Conditions</a></p>
+          <button class="button" (click)="onCreateAccount()">Create Account</button>
+          <p>Already registered for <a href>Starter App?</a><br><a routerLink="/login">Click here to login.</a></p>
+      </form>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section id="test" class="pane pane--state-dark pane--state-flex">
+  <div class="service-intro">
+      <h1>Starter App</h1>
+      <div class="login--image login--image-light"></div>
+      <h2>Application Tag Line</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eaque quis culpa dignissimos voluptatum totam repellat tempore maiores architecto enim facere quidem consequatur, similique laboriosam accusantium tempora sapiente pariatur asperiores.</p>
+  </div>
+
+</section>
+<section class="pane pane--state-flex">
+  <div class="login">
+      <h1>Welcome Back</h1>
+      <div class="login--image login--image-dark"></div>
+      <form action="">
+          <div class="form-element">
+              <label>Email</label>
+              <input type="text" class="input" [(ngModel)]="email" name="email">
+          </div>
+          <div class="form-element">
+              <label for="">Password</label>
+              <input type="password" class="input" [(ngModel)]="password" name="password">
+          </div>
+
+          <button class="button" (click)="onLogin()">Login</button>
+          <p>Forgot your password? <a href>Click here to recover password.</a></p>
+          <p>New to <a href>Starter App?</a><br><a routerLink="/register">Click here to register.</a></p>
+      </form>
+  </div>
+</section>
