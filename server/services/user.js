@@ -1,12 +1,13 @@
 const bcrypt = require('bcrypt');
 const { User } = require('../models/user');
+const { sign,} = require('../services/token');
 
 module.exports = {
   authenticate: async (credentials) => {
       const user = await User.findOne({email: credentials.email});
       if(!user) throw new Error('User not found');
       const validPassword = await bcrypt.compare(credentials.password, user.password);
-      if(validPassword) return 'Successfully authenticated';
+      if(validPassword) return sign({ email: user.email, id: user._id});
       else throw new Error('Invalid password');
   },
   create: async (userDetails) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 const UserService = require('../../services/user');
-const { User } = require('../../models/user');
+const logger = require('../../configs/winston')
 const router = express.Router();
 
 router.post('/users', async (req, res, next) => {
@@ -28,10 +28,10 @@ router.post('/users/auth', async (req, res, next) => {
     //TODO check if credentials are empty through some middleware
     const credentials = req.body;
     try{
-      const isValid = await UserService.authenticate(credentials);
-      if(isValid) return res.json('Successfully authenticated');
+      const token = await UserService.authenticate(credentials);
+      res.json({"token": token});
     }catch(e){
-      console.log(e)
+      logger.error(`${e.status || 400} - ${e.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`)
       res.status(400).json(e.message)
     }
 })
